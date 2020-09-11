@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  
+  <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@400;700&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="fonts/icomoon/style.css">
+  <link rel="stylesheet" href="fonts/brand/style.css">
+
+  <link rel="stylesheet" href="css/bootstrap.min.css">
+  <link rel="stylesheet" href="css/bootstrap-datepicker.css">
+  <link rel="stylesheet" href="css/jquery.fancybox.min.css">
+  <link rel="stylesheet" href="css/owl.carousel.min.css">
+  <link rel="stylesheet" href="css/owl.theme.default.min.css">
+  <link rel="stylesheet" href="css/aos.css">
+
+  
+  <!-- MAIN CSS -->
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/templatemo-style.css">
+
+    <!--
+	Product Admin CSS Template
+	https://templatemo.com/tm-524-product-admin
+  -->
+</head>
+
+<body id="reportsPage">
+    <div class="" id="home">
+        <nav class="navbar navbar-expand-xl">
+            <div class="container h-100">
+                <a class="navbar-brand" href="index.html">
+                    <h1 class="tm-site-title mb-0">UTrain</h1>
+                </a>
+                <button class="navbar-toggler ml-auto mr-0" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+                    aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                    <i class="fas fa-bars tm-nav-icon"></i>
+                </button>
+
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <ul class="navbar-nav mx-auto h-100">
+                        <li class="nav-item">
+                            <a class="nav-link" href="index.html">
+                                <i class="fas fa-tachometer-alt"></i>
+                                Dashboard
+                            </a>
+                        </li>
+                        <li class="nav-item dropdown">
+
+                            <a class="nav-link dropdown-toggle" href="courses.html" id="navbarDropdown" role="button" data-toggle="dropdown"
+                                aria-haspopup="true" aria-expanded="false">
+                                <i class="far fa-file-alt"></i>
+                                <span>
+                                    Courses <i class="fas fa-angle-down"></i>
+                                    <span class="sr-only">(current)</span>
+                                </span>
+                            </a>
+                            <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                <a class="dropdown-item" href="courses.html#mandatory">Mandatory</a>
+                                <a class="dropdown-item" href="courses.html#recommended">Recommended</a>
+								<a class="dropdown-item" href="courses.html">Browse</a>
+                            </div>
+                        </li>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown"
+                                aria-haspopup="true" aria-expanded="false">
+                                <i class="fas fa-cog"></i>
+                                <span>
+                                    Settings <i class="fas fa-angle-down"></i>
+                                </span>
+                            </a>
+                            <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                <a class="dropdown-item" href="#">Profile</a>
+                            </div>
+                        </li>
+                        <li class="nav-item">
+                          <a class="nav-link active" href="management_view.html">
+                              <i class="fas fa-tachometer-alt"></i>
+                              Management View
+                          </a>
+                      </li>
+                    </ul>
+                    <ul class="navbar-nav">
+                        <li class="nav-item">
+                            <a class="nav-link d-block" href="#">
+                                Sumit, <b>Logout</b>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+        </nav>
+        <div class="container">
+          <div class="row">
+              <div class="col">
+                  <p class="text-white mt-2 mb-5">Welcome <b>Sumit</b></p>
+              </div>
+          </div>
+          <!-- row -->
+
+
+            <!--       ==============     Management Code================= -->
+            <!--       ==============     Management Code================= -->
+            <!--       ==============     Management Code================= -->
+            <!--       ==============     Management Code================= -->
+            <style type="text/css" >
+                .management-view {
+                    background-color: var(--white);
+                    padding: 30px;
+                }
+                .management-view .content {
+                    display: flex;
+                    flex-direction: column;
+                    width: 700px;
+                    max-width: 100%;
+                    padding-left: 20px;
+                }
+                .management-view .profiles {
+                    display: flex;
+                    padding: 50px 0 70px;
+                    border-bottom: 2px solid;
+                }
+                .management-view .button {
+                    padding: 10px 20px;
+                    border: none;
+                    margin-right: 25px;
+                    background-color: rgb(195, 195, 195);
+                }
+                .management-view .button.active {
+                    background-color: rgb(248, 36, 108);
+                    color: var(--white);
+                }
+                .management-view .button:first-child {
+                    margin-left: 0;
+                }
+                .management-view .button:hover {
+                    background-color: var(--gray);
+                    color: var(--white);
+                }
+                .management-view .add-new-btn {
+                    margin-left: 0;
+                    border: 2px solid var(--gray);
+                }
+                .management-view .completion-container {
+                    margin: 40px 0;
+                    position: relative;
+                }
+                .management-view .completion-bar {
+                    border: 2px solid var(--gray);
+                    padding: 10px 20px;
+                    margin-bottom: 20px;
+                    display: flex;
+                    justify-content: space-between;
+                    position: relative;
+                }
+                .management-view .completion-bar::after {
+                    content: "";
+                    position: absolute;
+                    background-color: rgb(195, 195, 195);
+                    height: 100%;
+                    left: 0;
+                    top: 0;
+                    z-index: 0;
+                }
+                .management-view .completion-bar-9::after {
+                    width: 90%;
+                }
+                .management-view .completion-bar-7::after {
+                    width: 70%;
+                }
+                .management-view .completion-bar-5::after {
+                    width: 50%;
+                }                
+                .management-view .completion-bar-1::after {
+                    width: 10%;
+                }
+                .management-view .completion-bar .progress-name, .management-view .completion-bar .progress-value {
+                    z-index: 1;
+                    font-weight: bold;
+                }
+                .bulk-remider {
+                    position: absolute;
+                    bottom: 35px;
+                    left: calc(100% + 20px);
+                    width: fit-content;
+                    display: flex;
+                    color: var(--gray);
+                    font-size: 18px;
+                }
+                .bulk-remider:hover {
+                    color: var(--blue);
+                    cursor: pointer;
+                }
+                .bulk-remider .icon {
+                    margin-right: 10px;
+                }
+            </style>
+            <div class="management-view" >
+                <h1 class="heading">Your Department Progress</h1>
+                <div class="content" >
+                    <div class="profiles" >
+                        <a href="management_view_SE.html" > 
+                            <button class="button profile " >
+                                <!--a href="management_view_SE.html"/--> 
+                                    Software Engineer
+                            </button>
+                        </a>
+                        <a href="management_view_BA.html" > 
+                            <button class="button profile active" >
+                            <!--a href="management_view_BA.html"/-->
+                                Business Analyst
+                            </button>
+                        </a>
+                        <button class="button profile" >++ Create Custom Profile !</button>
+                    </div>
+                    <div class="completion-container">
+                        <div class="completion-bar completion-bar-9" >
+                            <label class="progress-name" >Excel</label>
+                            <label class="progress-value" >90% skilled</label>
+                        </div>                        
+                        <div class="completion-bar completion-bar-7" >
+                            <label class="progress-name" >AVALOQ</label>
+                            <label class="progress-value" >70% skilled</label>
+                        </div>
+                        <div class="completion-bar completion-bar-5" >
+                            <label class="progress-name" >SQL</label>
+                            <label class="progress-value" >50% skilled</label>
+                        </div>                        
+                        <div class="completion-bar completion-bar-1" >
+                            <label class="progress-name" >JAVA</label>
+                            <label class="progress-value" >10% skilled</label>
+                        </div>                        
+                        <div class="bulk-remider" >
+                            <span class="icon" ></span>
+                            <div >✉ Send a bulk reminder ?</div>
+                        </div>
+                    </div>
+                    <div class="button add-new-btn" style="margin: 0em;" >++ Add New Skill to this profile</div>
+                </div>
+            </div>
+
+            <!--       ==============     Management Code================= -->
+            <!--       ==============     Management Code================= -->
+            <!--       ==============     Management Code================= -->
+            <!--       ==============     Management Code================= -->
+
+
+
+
+      <footer class="tm-footer row tm-mt-small">
+          <div class="col-12 font-weight-light">
+              <p class="text-center text-white mb-0 px-4 small">
+                  Copyright &copy; <b>2020</b> All rights reserved.
+              </p>
+          </div>
+      </footer>
+
+
+    </div>
+
+</body>
+
+</html>
