@@ -7,11 +7,9 @@ https://templatemo.com/tm-524-product-admin
 */
 
 html {
-  font-size: 16px;
   overflow-x: hidden;
 }
 body {
-  font-family: Roboto, Helvetica, Arial, sans-serif;
   background-color: #25333F;
   overflow-x: hidden;
 }
@@ -40,9 +38,12 @@ button:focus {
   color: #fff;
 }
 .navbar {
-  height: 100px;
-  background-color: #394D5E;
-  padding: 0;
+  margin-bottom: 0px;
+  z-index: 9;
+  position: absolute;
+  top: 0;
+  width: 100%;
+  padding: 1rem;
 }
 .navbar .container {
   position: relative;
@@ -92,7 +93,7 @@ button:focus {
 .tm-block-title {
   font-size: 1.1rem;
   font-weight: 700;
-  color: #fff;
+  color: black;
   margin-bottom: 30px;
 }
 .nav-link {
@@ -279,12 +280,12 @@ thead {
 }
 .form-control {
   background-color: #54657d;
-  color: #fff;
+  color: black;
   border: 0;
 }
 .form-control:focus {
   background-color: #60738e;
-  color: #fff;
+  color: black;
   border-color: transparent;
   box-shadow: 0 0 0 0.1rem rgb(180, 206, 233, 0.5);
 }
@@ -374,7 +375,7 @@ thead {
   color: #a0c0de;
 }
 .tm-bg-primary-dark {
-  background-color: #0D2F4A;
+  background-color: white;
 }
 .tm-bg-gray {
   background-color: rgba(0, 0, 0, 0.05);
