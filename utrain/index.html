@@ -16,7 +16,6 @@
   <link rel="stylesheet" href="css/owl.carousel.min.css">
   <link rel="stylesheet" href="css/owl.theme.default.min.css">
   <link rel="stylesheet" href="css/aos.css">
-
   <!-- MAIN CSS -->
   <link rel="stylesheet" href="css/style.css">
   <link rel="stylesheet" href="css/templatemo-style.css">
@@ -64,21 +63,15 @@
                             </div>
                         </li>
                         <li class="nav-item dropdown">
-                            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown"
-                                aria-haspopup="true" aria-expanded="false">
-                                <i class="fas fa-cog"></i>
-                                <span>
-                                    Settings <i class="fas fa-angle-down"></i>
-                                </span>
+                            <a class="nav-link" href="management_view_BA.html">
+                                <i class="fas fa-tachometer-alt"></i>
+                                Management View
                             </a>
-                            <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                                <a class="dropdown-item" href="#">Profile</a>
-                            </div>
                         </li>
                         <li class="nav-item">
-                          <a class="nav-link" href="management_view_BA.html">
+                          <a class="nav-link" href="profile.html">
                               <i class="fas fa-tachometer-alt"></i>
-                              Management View
+                              Profile
                           </a>
                       </li>
                     </ul>
@@ -117,10 +110,23 @@
                 </div>
                 <div class="col-sm-12 col-md-12 col-lg-6 col-xl-6 tm-block-col">
                     <div class="tm-bg-primary-dark tm-block tm-block-taller">
-                        <h2 class="tm-block-title">Upcoming Events, Enroll Now</h2>
-                        <div id="pieChartContainer">
-                            <canvas id="pieChart" class="chartjs-render-monitor" width="200" height="200"></canvas>
-                        </div>
+                        <h2 class="tm-block-title">Leaderboard (for your GCP pathway)</h2>
+                        <!-- specify a table with a row describing the title of each column -->
+                        <div class="lb">
+                        <table >
+                            <tr>
+                            <th>
+                                Pos
+                            </th>
+                            <th>
+                                Name
+                            </th>
+                            <th>
+                                Learning completed
+                            </th>
+                            </tr>
+                        </table>
+                    </div>
                     </div>
                 </div>
                 <div class="col-sm-12 col-md-12 col-lg-6 col-xl-6 tm-block-col">
@@ -136,13 +142,22 @@
                                 </div>
                             </div>
                             <div class="media tm-notification-item">
+                                <div class="tm-gray-circle"><img src="img/hackathon.png" alt="Avatar Image" class="rounded-circle"></div>
+                                <div class="media-body">
+                                    <p class="mb-2"><b>Interested in innovation and chanllenges? Register yourself for Global Hackthon before 3rd Oct. <a href="#"
+                                            class="tm-notification-link">Click here for more details</a>.</p>
+                                    <span class="tm-small tm-text-color-secondary">4h ago.</span>
+                                </div>
+                            </div>
+                            <div class="media tm-notification-item">
                                 <div class="tm-gray-circle"><img src="img/notification-02.jpg" alt="Avatar Image" class="rounded-circle"></div>
                                 <div class="media-body">
                                     <p class="mb-2"><b>Chaitanya</b> and <b>3 others</b> recommend Machine Learning module <a href="#"
                                             class="tm-notification-link">Check here</a>.</p>
-                                    <span class="tm-small tm-text-color-secondary">6h ago.</span>
+                                    <span class="tm-small tm-text-color-secondary">8h ago.</span>
                                 </div>
                             </div>
+                            
                         </div>
                     </div>
                 </div>
@@ -156,15 +171,18 @@
         </footer>
     </div>
 
-    <script src="js/jquery-3.3.1.min.js"></script>
+   
     <!-- https://jquery.com/download/ -->
     <script src="js/moment.min.js"></script>
+    <script src="js/jquery-3.3.1.min.js"></script>
+    <script src="js/jquery-2.1.4.min.js"></script>
     <!-- https://momentjs.com/ -->
     <script src="js/Chart.min.js"></script>
     <!-- http://www.chartjs.org/docs/latest/ -->
     <script src="js/bootstrap.min.js"></script>
     <!-- https://getbootstrap.com/ -->
     <script src="js/utrain-scripts.js"></script>
+    <script src = "https://d3js.org/d3.v4.min.js"></script>
     <script>
         Chart.defaults.global.defaultFontColor = '#696969';
         let ctxLine,
@@ -187,6 +205,73 @@
                 updateBarChart();
             });
         })
+    </script>
+    <script>
+const colors = {
+  '28d': '#00D2BE',
+}
+
+const leaderboard = [
+  {
+    name: 'Richa Sharma',
+    days: '99d',
+    gap: '90%',
+  },
+  {
+    name: 'Valteri Bottas',
+    days: '80d',
+    gap: '86%'
+  },
+  {
+    name: 'Jayesh Sonar',
+    days: '52d',
+    gap: '85%'
+  },
+  {
+    name: 'You',
+    days: '28d',
+    gap: '51%'
+  },
+  {
+    name: 'Max Verst',
+    days: '32d',
+    gap: '40%'
+  },
+  {
+    name: 'Charles Lecl',
+    days: '14d',
+    gap: '20%'
+  }
+];
+
+const main = d3
+  .select('table');
+
+const employee = main
+  .selectAll('tr.employee')
+  .data(leaderboard)
+  .enter()
+  .append('tr')
+  .attr('class', 'employee');
+  employee
+  .append('td')
+  .text((d, i) => i + 1)
+  .attr('class', 'position');
+
+  employee
+  .append('td')
+  .html (({name, days}) => `${name.split(' ').map((part, index) => index > 0 ? `<strong>${part}</strong>` : `${part}`).join(' ')} <span>${days}</span>`)
+  .style('border-left', ({days}) => {
+    const color = days.split(' ').map((word, index) => index > 0 ? `${word[0].toUpperCase()}${word.slice(1)}` : `${word}` ).join('');
+    return `4px solid ${colors[color]}`;
+  })
+  .attr('class', 'employee');
+
+  employee
+  .append('td')
+  .attr('class', 'gap')
+  .append('span')
+  .text(({gap}) => gap);
     </script>
 </body>
 
